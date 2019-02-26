@@ -59,7 +59,7 @@ vector<vector<int>> SimulateLife(vector<vector<int>> &board, int life_cycles){
 
             //calculate if cell should be alive or dead
             if(board[x][y] != 2){
-                int alive = NeighborsAlive(board);
+                int alive = NeighborsAlive(board, x, y);
                 if(alive >= 4 || alive <= 1){
                     new_board[x][y] = 0;
                 }else if(board[x][y] == 1 && (alive == 2 || alive == 3)){
