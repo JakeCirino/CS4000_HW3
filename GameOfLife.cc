@@ -43,12 +43,7 @@ int GameOfLife::NeighborsAlive(vector<vector<int>> &board, int x, int y){
 
 vector<vector<int>> GameOfLife::SimulateLife(vector<vector<int>> &board, int life_cycles){
     //create the current board
-    vector<vector<int>> current_board;
-    current_board.resize(board.size());
-    for(int i = 0; i < board.size(); i++){
-        current_board[i].resize(board.size());
-    }
-    current_board = board;
+    vector<vector<int>> current_board = board;
 
     //loop through for the number of life cycles
     for(int lc = 0; lc < life_cycles; lc++){
