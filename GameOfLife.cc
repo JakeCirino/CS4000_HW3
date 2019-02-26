@@ -66,7 +66,7 @@ vector<vector<int>> GameOfLife::SimulateLife(vector<vector<int>> &board, int lif
             if(current_board[x][y] != 2){
                 int alive = NeighborsAlive(current_board, x, y);
                 if(lc == 0)
-                    cout << alive << endl;
+                    cout << alive << ": " << x << ", " << y << endl;
                 if(alive >= 4 || alive <= 1){
                     tmp_board[x][y] = 0;
                 }else if(current_board[x][y] == 1 && (alive == 2 || alive == 3)){
