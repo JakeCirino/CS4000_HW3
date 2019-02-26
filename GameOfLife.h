@@ -4,7 +4,7 @@
 
 class GameOfLife{
 public:
-    vector<vector<int>> SimulateLife(vector<vector<int>> &board, int life_cycles);
+    std::vector<std::vector<int>> SimulateLife(std::vector<std::vector<int>> &board, int life_cycles);
 
 private:
     //gets the x location based off the index/size of the world
@@ -16,6 +16,6 @@ private:
     //wraps coordinate values based on width/height
     int Wrap(int val, int size);
     //returns the number of neighbors alive for a given square
-    int NeighborsAlive(vector<vector<int>> &board, int x, int y);
+    int NeighborsAlive(std::vector<std::vector<int>> &board, int x, int y);
 };
 #endif
