@@ -7,6 +7,9 @@ vector<vector<int>> SimulateLife(vector<vector<int>> &board, int life_cycles){
         //initiate new board
         vector<vector<int>> new_board;
         new_board.resize(board.size());
+        for(int i = 0; i < board.size(); i++){
+            new_board[i].resize(board.size());
+        }
         
         //store iterations
         int iterations = board.size()*board.size();
@@ -14,9 +17,21 @@ vector<vector<int>> SimulateLife(vector<vector<int>> &board, int life_cycles){
         for(int i = 0; i < iterations; i++){
             int x = GetX(i, board.size()),
                 y = GetY(i, board.size());
-            if(board[x][y] == 2)
+
+            //calculate if cell should be alive or dead
+            if(board[x][y] != 2){
+                int alive = NeighborsAlive(board);
+                if(alive >= 4 || alive <= 1){
+                    new_board[x][y] = 0;
+                }else if(board[x][y] == 1 && (alive == 2 || alive == 3)){
+                    new_board[x][y] = 1;
+                }else if(alive == 3){
+                    new_board[x][y] = 1;
+                }
+            }else
                 new_board[x][y] = 2;
         }
+        board = new_board
     }
 }
 
@@ -51,7 +66,7 @@ int NeighborsAlive(vector<vector<int>> &board, int x, int y){
             int actual_y = Wrap(y1, size);
             
             //check if the value is alive or dead
-            if(board[actual_x][actual_y] != 0)
+            if(board[actual_x][actual_y] != 0 && actual_x != x && actual_y != y)
                 alive++;
         }
     }
