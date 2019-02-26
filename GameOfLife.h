@@ -1,6 +1,7 @@
 #ifndef CONWAY_H
 #define CONWAY_H
 #include <vector>
+using namespace std;
 
 class GameOfLife{
 public:
