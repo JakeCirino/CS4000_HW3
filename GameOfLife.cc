@@ -33,6 +33,7 @@ int GameOfLife::NeighborsAlive(vector<vector<int>> &board, int x, int y){
             //get actual values in case we need to wrap around the world
             int actual_x = Wrap(x1, size);
             int actual_y = Wrap(y1, size);
+            cout << actual_x << ", " << actual_y << endl;
             
             //check if the value is alive or dead
             if(board[actual_x][actual_y] != 0 && actual_x != x && actual_y != y)
