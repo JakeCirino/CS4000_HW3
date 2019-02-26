@@ -1,6 +1,7 @@
 #include "GameOfLife.h"
 #include <vector>
 #include <cmath>
+#include <iostream>
 using namespace std;
 
 int GameOfLife::GetX(int index, int size){
