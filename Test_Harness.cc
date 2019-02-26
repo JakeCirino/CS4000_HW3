@@ -46,8 +46,6 @@ int main() {
   int k;
   cin >> k;
 
-print_board(board);
-  cout << board[2][1] << endl;
   GameOfLife obj;
   vector<vector<int> > result;
 
