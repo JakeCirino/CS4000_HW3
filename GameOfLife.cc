@@ -27,7 +27,7 @@ int GameOfLife::Wrap(int val, int size){
 int GameOfLife::NeighborsAlive(vector<vector<int>> &board, int x, int y){
     int alive = 0;
     int size = board.size();
-    for(int x1 = x-1; x1 <= x+1; x1++){
+    for(int x1 = x - 1; x1 <= x+1; x1++){
         for(int y1 = y - 1; y1 <= y+1; y1++){
             //get actual values in case we need to wrap around the world
             int actual_x = Wrap(x1, size);
@@ -64,6 +64,7 @@ vector<vector<int>> GameOfLife::SimulateLife(vector<vector<int>> &board, int lif
             //calculate if cell should be alive or dead
             if(current_board[x][y] != 2){
                 int alive = NeighborsAlive(current_board, x, y);
+                cout << alive << endl;
                 if(alive >= 4 || alive <= 1){
                     tmp_board[x][y] = 0;
                 }else if(current_board[x][y] == 1 && (alive == 2 || alive == 3)){
