@@ -1,4 +1,4 @@
-#include "conway.h"
+#include "GameOfLife.h"
 #include <vector>
 
 vector<vector<int>> SimulateLife(vector<vector<int>> &board, int life_cycles){

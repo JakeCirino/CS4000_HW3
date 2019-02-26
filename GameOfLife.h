@@ -1,5 +1,7 @@
 #ifndef CONWAY_H
 #define CONWAY_H
+#include <vector>
+
 class GameOfLife{
 public:
     vector<vector<int>> SimulateLife(vector<vector<int>> &board, int life_cycles);
