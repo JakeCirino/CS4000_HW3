@@ -17,7 +17,7 @@ int GameOfLife::ToIndex(int x, int y, int size){
 
 int GameOfLife::Wrap(int val, int size){
     if(val < 0)
-        return size;
+        return size-1;
     else if(val >= size)
         return 0;
     else
