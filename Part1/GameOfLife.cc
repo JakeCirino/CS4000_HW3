@@ -1,3 +1,9 @@
+//*****************************************************************************
+//File: GameOfLife.cc
+//Author: Jake Cirino
+//Date: Spring 2019
+//Purpose:  Code implementation of game of life simulation
+//****************************************************************************
 #include "GameOfLife.h"
 #include <vector>
 #include <cmath>
