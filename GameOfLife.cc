@@ -3,19 +3,19 @@
 #include <cmath>
 using namespace std;
 
-int GetX(int index, int size){
+int GameOfLife::GetX(int index, int size){
     return index%size;
 }
 
-int GetY(int index, int size){
+int GameOfLife::GetY(int index, int size){
     return floor(index/size);
 }
 
-int ToIndex(int x, int y, int size){
+int GameOfLife::ToIndex(int x, int y, int size){
     return x + y*size;
 }
 
-int Wrap(int val, int size){
+int GameOfLife::Wrap(int val, int size){
     if(val < 0)
         return size;
     else if(val >= size)
@@ -24,7 +24,7 @@ int Wrap(int val, int size){
         return val;
 }
 
-int NeighborsAlive(vector<vector<int>> &board, int x, int y){
+int GameOfLife::NeighborsAlive(vector<vector<int>> &board, int x, int y){
     int alive = 0;
     int size = board.size();
     for(int x1 = x-1; x1 <= x+1; x1++){
@@ -41,7 +41,7 @@ int NeighborsAlive(vector<vector<int>> &board, int x, int y){
     return alive;
 }
 
-vector<vector<int>> SimulateLife(vector<vector<int>> &board, int life_cycles){
+vector<vector<int>> GameOfLife::SimulateLife(vector<vector<int>> &board, int life_cycles){
     //loop through for the number of life cycles
     for(int lc = 0; lc < life_cycles; lc++){
         //initiate new board
@@ -73,4 +73,5 @@ vector<vector<int>> SimulateLife(vector<vector<int>> &board, int life_cycles){
         }
         board = new_board;
     }
+    return board;
 }
