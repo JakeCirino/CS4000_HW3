@@ -1,5 +1,6 @@
 #include "GameOfLife.h"
 #include <vector>
+using namespace std;
 
 vector<vector<int>> SimulateLife(vector<vector<int>> &board, int life_cycles){
     //loop through for the number of life cycles
