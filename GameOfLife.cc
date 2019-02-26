@@ -5,11 +5,11 @@
 using namespace std;
 
 int GameOfLife::GetX(int index, int size){
-    return index%size;
+    return floor(index/size);
 }
 
 int GameOfLife::GetY(int index, int size){
-    return floor(index/size);
+    return index%size;
 }
 
 int GameOfLife::ToIndex(int x, int y, int size){
