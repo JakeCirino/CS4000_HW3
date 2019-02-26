@@ -1,5 +1,6 @@
 #include "GameOfLife.h"
 #include <vector>
+#include <cmath>
 using namespace std;
 
 int GetX(int index, int size){
@@ -70,6 +71,6 @@ vector<vector<int>> SimulateLife(vector<vector<int>> &board, int life_cycles){
             }else
                 new_board[x][y] = 2;
         }
-        board = new_board
+        board = new_board;
     }
 }
