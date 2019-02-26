@@ -1,6 +1,6 @@
+#include <vector>
 #ifndef CONWAY_H
 #define CONWAY_H
-#include <vector>
 
 class GameOfLife{
 public:
