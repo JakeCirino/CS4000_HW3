@@ -34,6 +34,8 @@ int GameOfLife::NeighborsAlive(vector<vector<int>> &board, int x, int y){
             int actual_x = Wrap(x1, size);
             int actual_y = Wrap(y1, size);
             
+            cout << actual_x << ", " << actual_y << ": " << board[actual_x][actual_y] << endl;
+
             //check if the value is alive or dead
             if(board[actual_x][actual_y] != 0 && actual_x != x && actual_y != y)
                 alive++;
@@ -65,8 +67,6 @@ vector<vector<int>> GameOfLife::SimulateLife(vector<vector<int>> &board, int lif
             //calculate if cell should be alive or dead
             if(current_board[x][y] != 2){
                 int alive = NeighborsAlive(current_board, x, y);
-                if(lc == 0)
-                    cout << alive << ": " << x << ", " << y << endl;
                 if(alive >= 4 || alive <= 1){
                     tmp_board[x][y] = 0;
                 }else if(current_board[x][y] == 1 && (alive == 2 || alive == 3)){
