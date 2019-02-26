@@ -25,7 +25,7 @@ int GameOfLife::NeighborsAlive(vector<vector<int>> &board, int i, int j){
             //cout << actual_x << ", " << actual_y << ": " << board[actual_x][actual_y] << endl;
 
             //check if the value is alive or dead
-            if(board[actual_i][actual_j] != 0 && actual_i != i && actual_j != j)
+            if(board[actual_i][actual_j] != 0 && !(actual_i == i && actual_j == j))
                 alive++;
         }
     }
